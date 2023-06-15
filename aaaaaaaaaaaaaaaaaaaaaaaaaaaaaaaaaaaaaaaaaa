@@ -1,0 +1,12 @@
+for (int i = 0; i < playground.Arena.Players.Length; i++) {
+        CSmScriptPlayer@ currentScript = cast<CSmScriptPlayer>(playground.Arena.Players[i].ScriptAPI);
+        if (currentScript != null && currentScript.AimYaw != 0.0 && currentScript.AimPitch != 0.0 && currentScript.AimRoll != 0.0) {
+            @script = @currentScript;
+            if (Player_Viewing_Override) {
+                Player_Viewing = Override_Player_Viewing;
+            } else {
+                Player_Viewing = i;
+            }
+            break;
+        }
+    }
